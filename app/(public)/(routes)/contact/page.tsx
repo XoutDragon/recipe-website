@@ -4,12 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 
-import { Asterisk } from "lucide-react";
-
-import { toast } from "sonner";
 import {
     FaArrowCircleRight,
     FaFacebook,
@@ -17,6 +12,7 @@ import {
     FaTiktok,
     FaYoutube,
 } from "react-icons/fa";
+import ContactForm from "./_components/Form";
 
 const Contact = () => {
     return (
@@ -52,49 +48,7 @@ const Contact = () => {
                         </div>
                     </div>
                 </section>
-                <form
-                    action="https://docs.google.com/forms/d/e/1FAIpQLSc95V6gYJkAaEXNPFDpnby7JbLWMslhM3F6CPl0aaAtqiodTg/formResponse"
-                    className="mx-auto w-11/12 space-y-2 lg:w-1/2"
-                    onSubmit={(e) => {
-                        e.preventDefault();
-                        const form = e.target as HTMLFormElement;
-                        const formData = new FormData(form);
-                        fetch(form.action, {
-                            method: "POST",
-                            body: formData,
-                        });
-
-                        toast("Message sent!");
-                    }}
-                >
-                    <Label htmlFor="entry.778388275">Full Name</Label>
-                    <Input
-                        type="text"
-                        name="entry.778388275"
-                        placeholder="Full Name"
-                    />
-                    <Label
-                        htmlFor="entry.2048398826"
-                        className="flex items-center"
-                    >
-                        Email <Asterisk className="text-red-500" size={12} />
-                    </Label>
-                    <Input
-                        type="email"
-                        name="entry.2048398826"
-                        placeholder="Email"
-                        required
-                    />
-                    <Label htmlFor="entry.510440441">Leave a message...</Label>
-                    <Input
-                        type="text"
-                        name="entry.510440441"
-                        placeholder="Subject"
-                    />
-                    <Button type="submit" className="w-full">
-                        Submit
-                    </Button>
-                </form>
+                <ContactForm />
             </div>
         </>
     );
