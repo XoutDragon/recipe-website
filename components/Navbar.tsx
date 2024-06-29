@@ -3,19 +3,28 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
+import { useScrollTop } from "@/hooks/use-scroll-top";
+
 import { Search } from "lucide-react";
 import { Menu } from "lucide-react";
 import { PiBread } from "react-icons/pi";
 
 import { Button } from "./ui/button";
+import { cn } from "@/lib/utils";
 
 const Navbar = () => {
     const router = useRouter();
+    const scrolled = useScrollTop();
 
     return (
         <>
             {/*MOBILE*/}
-            <nav className="fixed top-0 z-50 flex w-full items-center justify-between px-[10%] py-5 lg:hidden">
+            <nav
+                className={cn(
+                    "top-0 z-50 flex w-full items-center justify-between px-[10%] py-5 lg:hidden",
+                    scrolled && "fixed",
+                )}
+            >
                 <h2>
                     <Link href="/">My Earth Kitchen</Link>
                 </h2>
@@ -31,7 +40,12 @@ const Navbar = () => {
             </nav>
 
             {/*DESKTOP*/}
-            <nav className="fixed top-0 z-50 hidden w-full items-center justify-between bg-[#FDD1D1] pl-[10%] lg:flex">
+            <nav
+                className={cn(
+                    "top-0 z-50 hidden w-full items-center justify-between bg-[#FDD1D1] pl-[10%] lg:flex",
+                    scrolled && "fixed",
+                )}
+            >
                 <h1>
                     <Link href="/">My Earth Kitchen</Link>
                 </h1>
