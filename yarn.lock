@@ -694,6 +694,17 @@
     jose "^4.13.1"
     uuid "^9.0.0"
 
+"@edgestore/server@^0.1.7":
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/@edgestore/server/-/server-0.1.7.tgz#155b8904464247d0a47b516a98269d1d2e6ec107"
+  integrity sha512-/iIB8nRPgdhDlQCloZD7zseklbMvwedm4zsjbORv7LJs8LAM64xdtdd2PefSWbrKY1jOrtG6W8UFpW4s6QbE1w==
+  dependencies:
+    "@edgestore/shared" "0.1.7"
+    "@panva/hkdf" "^1.0.4"
+    cookie "^0.5.0"
+    jose "^4.13.1"
+    uuid "^9.0.0"
+
 "@edgestore/shared@0.1.7":
   version "0.1.7"
   resolved "https://registry.yarnpkg.com/@edgestore/shared/-/shared-0.1.7.tgz#dd2391fc0bcafc8a65d70762c757fc512b8e2ba5"
@@ -4287,6 +4298,11 @@ yocto-queue@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/yocto-queue/-/yocto-queue-0.1.0.tgz#0294eb3dee05028d31ee1a5fa2c556a6aaf10a1b"
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
+
+zod@^3.23.8:
+  version "3.23.8"
+  resolved "https://registry.yarnpkg.com/zod/-/zod-3.23.8.tgz#e37b957b5d52079769fb8097099b592f0ef4067d"
+  integrity sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==
 
 zustand@^4.5.4:
   version "4.5.4"

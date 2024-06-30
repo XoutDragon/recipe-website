@@ -22,7 +22,7 @@ const Navbar = () => {
             <nav
                 className={cn(
                     "top-0 z-50 flex w-full items-center justify-between px-[10%] py-5 lg:hidden",
-                    scrolled && "fixed",
+                    scrolled && "fixed border-b border-black",
                 )}
             >
                 <h2>
@@ -43,7 +43,7 @@ const Navbar = () => {
             <nav
                 className={cn(
                     "top-0 z-50 hidden w-full items-center justify-between bg-[#FDD1D1] pl-[10%] lg:flex",
-                    scrolled && "fixed",
+                    scrolled && "fixed border-b border-black",
                 )}
             >
                 <h1>
