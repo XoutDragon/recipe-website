@@ -53,12 +53,15 @@ const Navbar = () => {
                 <div className="inline-flex">
                     <Button
                         variant={"ghost"}
-                        className="h-16 w-64 gap-x-2"
+                        className="h-16 w-64 gap-x-2 rounded-none"
                         onClick={() => router.push("/recipes")}
                     >
                         <h1>RECIPES </h1> <PiBread size={32} />
                     </Button>
-                    <Button variant={"ghost"} className="h-16 w-64 gap-x-2">
+                    <Button
+                        variant={"ghost"}
+                        className="h-16 w-64 gap-x-2 rounded-none"
+                    >
                         <h1>MENU</h1> <Menu size={32} />
                     </Button>
                     <Button
