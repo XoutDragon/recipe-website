@@ -4,6 +4,10 @@ import "./globals.css";
 
 import { cn } from "@/lib/utils";
 
+import { ConvexClientProvider } from "@/components/providers/convex-provider";
+import { ModalProvider } from "@/components/providers/modal-provider";
+import { EdgeStoreProvider } from "@/lib/edgestore";
+
 import { Toaster } from "sonner";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -20,8 +24,15 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <Toaster position="bottom-right" />
-            <body className={cn(inter.className)}>{children}</body>
+            <body className={(cn("h-screen"), inter.className)}>
+                <ConvexClientProvider>
+                    <EdgeStoreProvider>
+                        <ModalProvider />
+                        <Toaster />
+                        {children}
+                    </EdgeStoreProvider>
+                </ConvexClientProvider>
+            </body>
         </html>
     );
 }
