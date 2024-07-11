@@ -10,6 +10,8 @@ import { Menu } from "lucide-react";
 import { PiBread } from "react-icons/pi";
 
 import { Button } from "./ui/button";
+import { NavMenu } from "./NavMenu";
+
 import { cn } from "@/lib/utils";
 
 const Navbar = () => {
@@ -54,16 +56,11 @@ const Navbar = () => {
                     <Button
                         variant={"ghost"}
                         className="h-16 w-64 gap-x-2 rounded-none"
-                        onClick={() => router.push("/recipes")}
+                        onClick={() => router.push("/allRecipes")}
                     >
                         <h1>RECIPES </h1> <PiBread size={32} />
                     </Button>
-                    <Button
-                        variant={"ghost"}
-                        className="h-16 w-64 gap-x-2 rounded-none"
-                    >
-                        <h1>MENU</h1> <Menu size={32} />
-                    </Button>
+                    <NavMenu />
                     <Button
                         variant={"ghost"}
                         className="h-16 w-16 rounded-none bg-red-900"
