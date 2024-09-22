@@ -8,11 +8,15 @@ export default defineSchema({
         content: v.optional(v.string()),
         thumbnail: v.optional(v.string()),
         isPublished: v.boolean(),
-        lastUpdated: v.string(),
-        dateCreated: v.string(),
-        tags: v.optional(v.array(v.string())),
     }),
     tags: defineTable({
         tagName: v.string(),
+        category: v.string(),
     }),
+    documentTags: defineTable({
+        documentId: v.id("documents"),
+        tagId: v.id("tags"),
+    })
+        .index("by_documentId", ["documentId"])
+        .index("by_tagId", ["tagId"]),
 });

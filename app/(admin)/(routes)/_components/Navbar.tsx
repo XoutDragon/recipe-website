@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Avatar } from "@/components/ui/avatar";
 import { Search, X } from "lucide-react";
 import { Input } from "@/components/ui/input";
+import { useOrigin } from "@/hooks/use-origin";
 
 const tabs = [
     {
@@ -31,6 +32,7 @@ const tabs = [
 
 export const AdminNavbar = ({}: {}) => {
     const pathname = usePathname();
+    const origins = useOrigin();
     const [active, setActive] = useState("");
 
     useEffect(() => {
@@ -60,7 +62,7 @@ export const AdminNavbar = ({}: {}) => {
                         style={{
                             transformStyle: "preserve-3d",
                         }}
-                        href={tab.href}
+                        href={origins + `/${tab.href}`}
                     >
                         {active.toLowerCase() === tab.value && (
                             <motion.div

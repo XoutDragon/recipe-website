@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { ConvexClientProvider } from "@/components/providers/convex-provider";
 import { ModalProvider } from "@/components/providers/modal-provider";
 import { EdgeStoreProvider } from "@/lib/edgestore";
+import { MantineProvider } from "@mantine/core";
 
 import { Toaster } from "sonner";
 
@@ -29,7 +30,7 @@ export default function RootLayout({
                     <EdgeStoreProvider>
                         <ModalProvider />
                         <Toaster />
-                        {children}
+                        <MantineProvider>{children}</MantineProvider>
                     </EdgeStoreProvider>
                 </ConvexClientProvider>
             </body>
